@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    
+<h:head>
+    <title>List Game</title>
+</h:head>
+<h:body>
+
+<h:form id= "form1">
+<div class="card">
+     <h1> Tabela de Jogos Gerados</h1>
+     
+<p:dataTable value="#{jogoBeans.listaJogo}" var="v"
+		border="1" selectionMode="single" rowKey="#{v.id}">
+		
+		<p:column>
+			
+			<h:outputText value="#{v.id}" />
+		</p:column>
+
+		<p:column>
+			<f:facet name="header">Descrição</f:facet>
+			<h:outputText value="#{v.descricao}" />
+			
+		</p:column>
+
+		<p:column>
+			<f:facet name="header">Valor 1</f:facet>
+			<h:outputText value="#{v.v1}" />
+			
+		</p:column>
+
+		<p:column>
+			<f:facet name="header">Valor 2</f:facet>
+			<h:outputText value="#{v.v2}" />
+			
+		</p:column>
+
+		<p:column>
+			<f:facet name="header">Valor 3</f:facet>
+			<h:outputText value="#{v.v3}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 4</f:facet>
+			<h:outputText value="#{v.v4}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 5</f:facet>
+			<h:outputText value="#{v.v5}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 6</f:facet>
+			<h:outputText value="#{v.v6}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 7</f:facet>
+			<h:outputText value="#{v.v7}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 8</f:facet>
+			<h:outputText value="#{v.v8}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 9</f:facet>
+			<h:outputText value="#{v.v9}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Valor 10</f:facet>
+			<h:outputText value="#{v.v10}" />
+			
+		</p:column>
+		<p:column>
+			<f:facet name="header">Data Criação</f:facet>
+			<h:outputText value="#{v.dataCriacao}" />
+		</p:column>
+		
+</p:dataTable><br></br><br></br>
+
+     <p:panelGrid columns="2" > 
+                 <h:outputText value="Informe o ID da Tabela "/> 
+                <h:inputText value="#{jogoBeans.jogo.id}"/> 
+ 
+                <h:outputText value="Descricao"/>
+                <h:inputText value="#{jogoBeans.jogo.descricao}"/>
+                
+                 <h:outputText value="Valor 1"/>
+                <h:inputText value="#{jogoBeans.jogo.v1}"/>
+                
+                 <h:outputText value="Valor 2"/>
+                <h:inputText value="#{jogoBeans.jogo.v2}"/>
+                
+                 <h:outputText value="Valor 3"/>
+                <h:inputText value="#{jogoBeans.jogo.v3}"/>
+                
+                <h:outputText value="Valor 4"/>
+                <h:inputText value="#{jogoBeans.jogo.v4}"/>
+                
+                <h:outputText value="Valor 5"/>
+                <h:inputText value="#{jogoBeans.jogo.v5}"/>
+                
+                <h:outputText value="Valor 6"/>
+                <h:inputText value="#{jogoBeans.jogo.v6}"/>
+                
+                <h:outputText value="Valor 7"/>
+                <h:inputText value="#{jogoBeans.jogo.v7}"/>
+                
+                <h:outputText value="Valor 8"/>
+                <h:inputText value="#{jogoBeans.jogo.v8}"/>
+                
+                <h:outputText value="Valor 9"/>
+                <h:inputText value="#{jogoBeans.jogo.v9}"/>
+                
+                <h:outputText value="Valor 10"/>
+                <h:inputText value="#{jogoBeans.jogo.v10}"/>
+               
+  </p:panelGrid><br></br><br></br>
+             
+            <p:commandButton value="Editar " action="#{jogoBeans.editar}"/>
+            <p:commandButton value="Excluir " action="#{jogoBeans.Excluir}"/> 
+            
+            <p:commandButton id="btn" type="button" icon="pi" value="Pares" onclick="PF('dlg').show();"/>
+            <p:commandButton value="Voltar " action="index"></p:commandButton>
+         </div>
+         
+         <p:dialog id="gmapDialog" widgetVar="dlg" width="625" height="400" modal="true">
+         
+      <p:dataTable value="#{jogoBeans.num}" var="p"
+      border="1" selectionMode="single" >
+		
+		<p:column>
+				<h:outputText value="#{jogoBeans.num}" />
+		</p:column>
+      
+      </p:dataTable>
+      
+       </p:dialog>
+         
+	</h:form>
+ 
+</h:body>
+</html>
